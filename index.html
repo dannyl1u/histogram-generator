@@ -1,0 +1,143 @@
+<!-- Source: Some parts of this code was reused from my CMPT 276 assignment
+https://csil-git1.cs.surrey.sfu.ca/dla216/cmpt276asn1-->
+
+<!DOCTYPE html>
+<html lang = "en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Histogram Generator</title>
+        <link rel="stylesheet" href="histogram.css">
+    </head>
+    <body>
+    <h1 class="title">
+        Histogram Generator
+    </h1>
+        
+    <form id="myForm" onload="init()">
+        <input id="csvFile" accept=".csv" type="file" name="file">
+        <pre id="fileContent"></pre>
+        <input type="submit" value="Submit">
+        <strong id="error"></strong>
+        <strong id="success"></strong>
+    </form>
+        <main>
+            <div class = "container">
+                <section class="lowerBoundsBox">
+                    <form action="histogram.html" method="post">
+                        <header>
+                            Lower bounds <br> 
+                        </header>
+                        <table id="lowerBoundsTable">
+                            
+                            <tr>
+                                <td>Max</td> <td><input type="number" id="Max" value="100.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>A+</td> <td><input id="aPlus" type="number" name="aPlus" value="95.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>A</td> <td><input id ="a" type="number" name="a" value="90.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>A-</td> <td><input id ="aMinus" type="number" name="aMinus" value="85.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>B+</td> <td><input id="bPlus" type="number" name="bPlus" value="80.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>B</td> <td><input id="b" type="number" name="b" value="75.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>B-</td> <td><input id="bMinus" type="number" name="bMinus" value="70.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>C+</td> <td><input id="cPlus" type="number" name="cPlus" value="65.00" onchange="setLowerBounds()"> </td>
+                            <tr>
+                                <td>C</td> <td><input id="c" type="number" name="c" value="60.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>C-</td> <td><input id="cMinus" type="number" name="cMinus" value="55.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>D</td> <td><input id="d" type="number" name="d" value="50.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                            <tr>
+                                <td>F</td> <td><input id="f" type="number" name="f" value="0.00" onchange="setLowerBounds()"> </td>
+                            </tr>
+                        </table>
+                        <br>
+                    </form>
+                </section>
+
+                <section class = "histogramBox">
+                        <form action="histogram.html" method="post">
+                            <header>
+                                Histogram <br> 
+                            </header>
+                            <table>
+                                <tr>
+                                    <td>A+</td> <td id="aPlusHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>A</td> <td id="aHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>A-</td> <td id="aMinusHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>B+</td> <td id="bPlusHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>B</td> <td id="bHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>B-</td> <td id="bMinusHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>C+</td> <td id="cPlusHistogram"></td>
+                                <tr>
+                                    <td>C</td> <td id="cHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>C-</td> <td id="cMinusHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>D</td> <td id="dHistogram"></td>
+                                </tr>
+                                <tr>
+                                    <td>F</td> <td id="fHistogram"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </section>
+
+                <section class = "newGradeBox">
+                        <form action="histogram.html">
+                            <table>
+                                <tr>
+                                    <td>Highest</td> <td id="highest"></td>
+                                </tr>
+                                <tr>
+                                    <td>Lowest</td> <td id="lowest"></td>
+                                </tr>
+                                <tr>
+                                    <td>Mean</td> <td id="mean"></td>
+                                </tr>
+                                <tr>
+                                    <td>Median</td> <td id="median"></td>
+                                </tr>
+                                <tr>
+                                    <td id = "successMessage"></td>
+                                </tr>
+                            </table>
+                        </form>       
+                        <script type="text/javascript" src="./calculate.js">
+                        </script>           
+                </section>       
+                <script type="text/javascript" src="./calculate.js">
+                </script>
+            </div>
+        </main>
+        <script type="text/javascript" src="./calculate.js"></script>
+        </body>
+</html>
