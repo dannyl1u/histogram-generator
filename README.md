@@ -7,5 +7,5 @@ https://dannyl1u.github.io/histogram-generator/histogram.html
 CSV file must be of the following format:
 
 Name, Percent <br>
-John Doe, 65%
+John Doe, 65% <br>
 Mary, 53%
