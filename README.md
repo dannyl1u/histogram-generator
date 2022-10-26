@@ -6,6 +6,6 @@ https://dannyl1u.github.io/histogram-generator/histogram.html
 
 CSV file must be of the following format:
 
-Name, Percent
+Name, Percent <br>
 John Doe, 65%
-Mary Jane, 70%
+Mary, 53%
